@@ -1398,16 +1398,14 @@ ul.profile-icons i.material-icons {
 }
 
 
-/* تنسيقات باليت الألوان الجديدة */
+
 .color-palette { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 .color-circle { width: 30px; height: 30px; margin-bottom: 5px; }
 
-/* ================= إعدادات غلاف الصورة للوضعين ================= */
-/* في وضع القائمة العادي: نجعل الغلاف وكأنه غير موجود لكي لا يفسد التصميم القديم */
+
 .board-image-wrap { display: contents; }
 .topic-thumbnail { display: none; }
 
-/* ================= وضع الشبكة (احترافي كالسلايدر) ================= */
 body.grid-layout .forum-category {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1416,6 +1414,8 @@ body.grid-layout .forum-category {
     border: none;
     box-shadow: none;
     padding: 0;
+    direction: rtl;
+    justify-content: right;
 }
 
 body.grid-layout span.cat-title {
@@ -1425,6 +1425,9 @@ body.grid-layout span.cat-title {
     border-radius: 8px;
     margin-bottom: 0;
     border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 .lp-meta strong span strong {
     padding-right: 5px;
@@ -1446,7 +1449,7 @@ body.grid-layout .board-row:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* 1. ترتيب الهيدر (اسم القسم) */
+
 body.grid-layout .board-main {
     order: 1;
     background: var(--primary-color);
@@ -1465,10 +1468,10 @@ body.grid-layout .sub-boards-container { display: none; }
 body.grid-layout .board-info h3 { margin: 0; text-align: center; font-size: 1.1rem; }
 body.grid-layout .board-info h3 a { color: white; }
 
-/* 2. دمج الصورة وتفاصيل الموضوع (تأثير السلايدر) */
+
 body.grid-layout .board-image-wrap {
     order: 2;
-    display: block; /* تفعيل الغلاف في وضع الشبكة */
+    display: block; 
     position: relative;
     width: 100%;
     height: 220px;
@@ -1485,15 +1488,15 @@ body.grid-layout .topic-thumbnail {
     background-position: center;
     align-items: center;
     justify-content: center;
-    transition: transform 0.6s ease; /* سرعة تأثير التقريب */
+    transition: transform 0.6s ease; 
 }
 
-/* تأثير التكبير عند تمرير الماوس */
+
 body.grid-layout .board-row:hover .topic-thumbnail {
     transform: scale(1.1);
 }
 
-/* التدرج اللوني الأسود فوق الصورة ليوضح النص */
+
 body.grid-layout .topic-thumbnail::after {
     content: '';
     position: absolute;
@@ -1504,7 +1507,7 @@ body.grid-layout .topic-thumbnail::after {
 
 body.grid-layout .topic-thumbnail i { font-size: 3rem; color: rgba(255,255,255,0.4); z-index: 1; }
 
-/* 3. تفاصيل الموضوع الأخير (فوق الصورة) */
+
 body.grid-layout .board-last-post {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -1546,7 +1549,7 @@ body.grid-layout .lp-meta {
 }
 body.grid-layout .lp-meta a, body.grid-layout .lp-meta strong { color: #facc15 !important; } /* لون ذهبي للمؤلف */
 
-/* 4. الإحصائيات (الفوتر الأسود) */
+
 body.grid-layout .board-stats {
     order: 3;
     display: flex;
@@ -1562,7 +1565,7 @@ body.grid-layout .board-stats {
 body.grid-layout .stat-badge { color: #e4e4e7; font-weight: 700; font-size: 0.9rem; }
 body.grid-layout .stat-badge i { color: #a1a1aa; }
 
-/* توافق الجوال للشبكة */
+
 @media (max-width: 768px) {
     body.grid-layout .board-row { flex: 1 1 100%; }
 }
@@ -1588,7 +1591,7 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* شريط الأدوات العلوي */
+
 .codebox-toolbar {
     padding: 8px 15px;
     display: flex;
@@ -1599,7 +1602,7 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     background: var(--flx-card);
     border: 1px solid var(--flx-border);
 }
-/* عنوان نوع الكود */
+
 .codebox-lang {
     color: #4CAF50;
     font-weight: bold;
@@ -1607,13 +1610,13 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     font-family: tahoma, sans-serif;
 }
 
-/* حاوية الأزرار */
+
 .codebox-buttons {
     display: flex;
     gap: 8px;
 }
 
-/* تصميم الأزرار */
+
 .code-btn {
     background: var(--flx-primary-light);
     color: var(--flx-primary);
@@ -1638,12 +1641,12 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     background-color: #28a745 !important;
 }
 
-/* إخفاء كلمة "الكود:" الافتراضية */
+
 .codebox > p {
     display: none;
 }
 
-/* منطقة عرض الكود */
+
 .codebox code {
     display: block;
     padding: 15px;
@@ -1681,7 +1684,7 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
 }
   
 
-/* 1. إعداد حاوية الصورة لتستقبل النقطة */
+
 .flx-avatar-box {
     position: relative;
     display: inline-flex;
@@ -1690,7 +1693,7 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     margin-left: 10px;
 }  
 
-/* 2. رسم النقطة الدائرية فوق الصورة (أسفل اليمين) */
+
 .flx-avatar-box::before {
     position: absolute;
     bottom: 5px;
@@ -1704,20 +1707,20 @@ body.grid-layout .stat-badge i { color: #a1a1aa; }
     transition: all 0.3s ease;
 }
 
-/* 3. حالة (متصل): لون أخضر مع تأثير نبض عصري */
+
 article.online .flx-avatar-box::before {
     content: '';
     background-color: #10b981; /* لون أخضر زمردي */
     animation: onlinePulse 2s infinite;
 }
 
-/* 4. حالة (غير متصل): لون رمادي */
+
 article:not(.online) .flx-avatar-box::before {
     content: '';
     background-color: #94a3b8; /* لون رمادي هادئ */
 }
 
-/* 5. تأثير النبض (Pulse) للمتصلين فقط */
+
 @keyframes onlinePulse {
     0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
     70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
@@ -1753,7 +1756,7 @@ article:not(.online) .flx-avatar-box::after {
     background-color: #94a3b8;
 }
 
-/* إظهار التلميح عند مرور الماوس */
+
 .flx-avatar-box:hover::after {
     opacity: 1;
     visibility: visible;
@@ -1766,7 +1769,7 @@ article:not(.online) .flx-avatar-box::after {
     display: flex;
 }
 
-/* حاوية الإعجابات المتداخلة */
+
 .flx-likers-container.stacked-avatars {
     display: flex;
     flex-direction: row;
@@ -1776,7 +1779,7 @@ article:not(.online) .flx-avatar-box::after {
     align-items: center;
 }
 
-/* تصميم دائرة المعجب */
+
 .flx-liker-chip {
     width: 40px;
     height: 40px;
